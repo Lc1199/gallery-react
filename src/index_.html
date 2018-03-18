@@ -13,25 +13,21 @@
   </style>
 </head>
 <body>
-  <div id="clock"></div>
-  <div id="warp" class="content">
-  	<canvas id="canvas"></canvas>
+  <div id="app" class="content">
+  	<img id="img" src="images/bg_1.jpg" />
   </div>
   <script type="text/javascript">
-  	let canvas = document.getElementById('canvas');
-  	let context = canvas.getContext('2d');
+  	let Img = document.getElementById('img');
+  	let width = document.getElementsByTagName('body')[0].offsetWidth;
+  	let height = document.getElementsByTagName('body')[0].offsetHeight;
+  	Img.style.width = width + "px";
+  	Img.style.height = height + "px";
+
   	let img = new Image();
-
-  	PageWidth = document.getElementsByTagName('body')[0].offsetWidth;
-	  PageHeight = document.getElementsByTagName('body')[0].offsetHeight;
-		
-	  canvas.width = PageWidth;
-	  canvas.height = PageHeight;
-
-	  img.src = 'images/bg_1.jpg'
-	  img.onload = function(){
-	    context.drawImage(img , 0 , 0 , img.width , img.height , 0 , 0 , PageWidth , PageHeight);
-	  }
+  	img.src = 'images/bg_1.jpg'
+		img.onload = function(){
+			alert(img.width)
+		}
   </script>
   <script>__REACT_DEVTOOLS_GLOBAL_HOOK__ = parent.__REACT_DEVTOOLS_GLOBAL_HOOK__</script>
   <script type="text/javascript" src="/assets/app.js"></script>
